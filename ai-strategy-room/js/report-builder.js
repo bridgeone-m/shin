@@ -82,6 +82,25 @@ const ReportBuilder = {
   },
 
   /**
+   * 보고서 전체 텍스트에서 "[확정답]" 블록만 분리한다 — [우리 팀 실행 방향]과는
+   * 별도로 추출되는, 한 문장짜리 최종 답이다.
+   * 반환: { finalAnswer: string|null, rest: string }
+   * 없으면(과거 형식 보고서) finalAnswer는 null, rest는 원문 전체.
+   */
+  splitFinalAnswer(reportText) {
+    const blocks = this._splitTopHeadings(reportText);
+    const idx = blocks.findIndex((b) => b.title && /^확정답$/.test(b.title.trim()));
+    if (idx === -1) return { finalAnswer: null, rest: String(reportText || '').trim() };
+    const raw = blocks[idx].raw;
+    const finalAnswer = raw.replace(/^##(?!#)\s+.+$/m, '').trim();
+    const rest = blocks
+      .filter((_, i) => i !== idx)
+      .map((b) => b.raw)
+      .join('\n\n');
+    return { finalAnswer: finalAnswer || null, rest };
+  },
+
+  /**
    * 보고서 전체 텍스트에서 "[우리 팀 실행 방향]" 블록만 분리한다.
    * 반환: { actionPlan: string|null, rest: string }
    * 없으면(과거 형식 보고서) actionPlan은 null, rest는 원문 전체.
@@ -299,18 +318,32 @@ const ReportBuilder = {
     return parts.join('\n');
   },
 
+  /** "[확정답]" 한 문장을 화면 맨 위에 별도의 강조 배너로 렌더링한다 */
+  renderFinalAnswerHtml(finalAnswerText) {
+    const escape = this._escape;
+    const text = String(finalAnswerText || '').trim();
+    if (!text) return '';
+    return (
+      `<div class="final-answer"><span class="final-answer-label">확정답</span>` +
+      `<p>${escape(text).replace(/\n/g, '<br>')}</p></div>`
+    );
+  },
+
   /**
    * 최종 결과 화면에 실제로 사용하는 렌더 함수.
-   * [우리 팀 실행 방향]이 있으면 "30초 요약" 카드 UI를 맨 위에 펼쳐서 보여주고,
+   * [확정답](한 줄 최종 답)이 있으면 화면 맨 위에 별도 배너로, 그 아래
+   * [우리 팀 실행 방향]이 있으면 "30초 요약" 카드 UI로 펼쳐서 보여주고,
    * 기존의 긴 상세 분석 보고서는 [상세 분석 보기] 안에 그대로 접어 넣는다(내용
-   * 손실 없음 — 클릭하면 전부 펼쳐진다). 없으면(과거 형식 보고서) 지금까지와
-   * 동일하게 전체를 renderToHtml로만 렌더링한다.
+   * 손실 없음 — 클릭하면 전부 펼쳐진다). 둘 다 없으면(과거 형식 보고서)
+   * 지금까지와 동일하게 전체를 renderToHtml로만 렌더링한다.
    */
   renderFullReport(reportText) {
-    const { actionPlan, rest } = this.splitActionPlan(reportText);
-    if (!actionPlan) return this.renderToHtml(reportText);
+    const { finalAnswer, rest: afterFinalAnswer } = this.splitFinalAnswer(reportText);
+    const { actionPlan, rest } = this.splitActionPlan(afterFinalAnswer);
+    if (!actionPlan) return (finalAnswer ? this.renderFinalAnswerHtml(finalAnswer) : '') + this.renderToHtml(afterFinalAnswer);
     const detailHtml = this.renderToHtml(rest);
     return (
+      (finalAnswer ? this.renderFinalAnswerHtml(finalAnswer) : '') +
       this.renderActionPlanHtml(actionPlan) +
       `\n<details class="detail-report-toggle"><summary>상세 분석 보기</summary><div class="detail-report-body">${detailHtml}</div></details>`
     );

@@ -257,6 +257,19 @@ body{
 .report-card h3:first-child{margin-top:0;}
 .report-card p{font-size:14px;line-height:1.85;color:var(--text-dark);margin:0 0 14px;}
 
+/* ---------- [확정답] — 화면 맨 위, 30초 요약보다도 먼저 보이는 한 줄 결론 ---------- */
+.final-answer{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy-dark) 100%);border-radius:14px;
+  padding:18px 22px;margin:0 0 20px;box-shadow:0 10px 24px -10px rgba(20,27,48,.45);
+}
+.final-answer-label{
+  display:inline-block;background:rgba(255,255,255,.16);color:#fff;font-size:11px;font-weight:700;
+  letter-spacing:.04em;padding:3px 10px;border-radius:999px;margin-bottom:10px;
+}
+.final-answer p{
+  margin:0;font-size:19px;font-weight:800;line-height:1.5;color:#fff;letter-spacing:-.01em;
+}
+
 /* ---------- [우리 팀 실행 방향] = "30초 요약" ---------- */
 .action-plan{
   background:#f4f8ff;border:1px solid #c9dcfa;border-radius:12px;

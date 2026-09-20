@@ -266,18 +266,34 @@ const QualityGuardrails = {
 
   /* ================================================================
    * 최종 보고서 (4차 통과 시 본문 또는 5차/보완 결과 공통 검증)
-   * 이제 보고서는 [우리 팀 실행 방향](팀이 바로 움직일 수 있는 요약) +
-   * 상세 분석 보고서 두 부분으로 구성된다. ReportBuilder.splitActionPlan으로
-   * 앞부분을 분리해 별도로 검증하고, 상세 보고서 검증(소제목 개수 등)은
-   * 그 나머지 부분 기준으로 그대로 적용한다.
+   * 이제 보고서는 [확정답](한 줄 최종 답) + [우리 팀 실행 방향](팀이 바로
+   * 움직일 수 있는 요약) + 상세 분석 보고서 세 부분으로 구성된다.
+   * ReportBuilder.splitFinalAnswer / splitActionPlan으로 앞부분들을 분리해
+   * 각각 검증하고, 상세 보고서 검증(소제목 개수 등)은 그 나머지 부분 기준으로
+   * 그대로 적용한다.
    * ================================================================ */
   report(text, hasAttachment) {
     const whole = String(text || '');
-    const canSplit = typeof ReportBuilder !== 'undefined' && typeof ReportBuilder.splitActionPlan === 'function';
-    const split = canSplit ? ReportBuilder.splitActionPlan(whole) : { actionPlan: null, rest: whole };
+    const hasReportBuilder = typeof ReportBuilder !== 'undefined';
+    const canSplitFinalAnswer = hasReportBuilder && typeof ReportBuilder.splitFinalAnswer === 'function';
+    const canSplitActionPlan = hasReportBuilder && typeof ReportBuilder.splitActionPlan === 'function';
 
     const failures = [];
     const ambiguousConcerns = [];
+
+    const finalAnswerSplit = canSplitFinalAnswer
+      ? ReportBuilder.splitFinalAnswer(whole)
+      : { finalAnswer: null, rest: whole };
+    if (!finalAnswerSplit.finalAnswer) {
+      failures.push('[확정답] 섹션이 없습니다 — 보고서 맨 위에 고정된 제목으로, 한 문장짜리 최종 답을 반드시 포함해야 합니다.');
+    } else if (finalAnswerSplit.finalAnswer.length > 120) {
+      ambiguousConcerns.push('[확정답]이 한 문장이라고 보기엔 길어 보입니다 — 설명 없이 단정적인 한 문장인지 애매합니다.');
+    }
+
+    const afterFinalAnswer = finalAnswerSplit.rest;
+    const split = canSplitActionPlan
+      ? ReportBuilder.splitActionPlan(afterFinalAnswer)
+      : { actionPlan: null, rest: afterFinalAnswer };
 
     if (!split.actionPlan) {
       failures.push('[우리 팀 실행 방향] 섹션이 없습니다 — 보고서 맨 위에 고정된 제목으로 이 섹션을 반드시 포함해야 합니다.');
@@ -290,7 +306,7 @@ const QualityGuardrails = {
       }
     }
 
-    const detailText = split.actionPlan ? split.rest : whole;
+    const detailText = split.actionPlan ? split.rest : afterFinalAnswer;
     const headingCount = this._countMatches(detailText, /^##\s+.+$/gm);
     if (headingCount < 3) {
       failures.push(`상세 보고서 구조(## 소제목)가 ${headingCount}개뿐입니다 — 논리적 흐름을 담은 소제목이 최소 3개 이상 필요합니다.`);
