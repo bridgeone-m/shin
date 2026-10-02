@@ -2,12 +2,9 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<title>POUR 홍보영상 v2</title>
+<title>POUR 홍보영상 v2 (원본 대본 유지)</title>
 <style>
-  :root{
-    --navy:#0b2847; --navy2:#071b31; --blue:#2f6fd0; --blue2:#1d57ad;
-    --sky:#7fb3e8; --ink:#10233c; --muted:#5a7390;
-  }
+  :root{--navy:#0b2847;--blue:#2f6fd0;--blue2:#1d57ad;--sky:#7fb3e8;--ink:#10233c;--muted:#5a7390}
   *{margin:0;padding:0;box-sizing:border-box}
   html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
   body{font-family:'Pretendard',sans-serif;-webkit-font-smoothing:antialiased}
@@ -19,121 +16,123 @@
   .brand{position:absolute;left:120px;top:58px;font-size:26px;font-weight:800;letter-spacing:.42em;color:var(--ink);display:flex;align-items:center;gap:22px}
   .brand i{display:block;width:62px;height:2px;background:currentColor;opacity:.55}
   .rule{position:absolute;left:0;bottom:0;height:5px;width:100%;background:linear-gradient(90deg,var(--blue) 0%,var(--sky) 42%,transparent 42%)}
-
   .seclabel{position:absolute;left:120px;top:150px}
   .seclabel .k{font-size:21px;font-weight:700;letter-spacing:.3em;color:var(--blue)}
-  .seclabel .t{font-size:54px;font-weight:800;color:var(--ink);margin-top:14px;letter-spacing:-.02em}
-  .on-navy .t{color:#fff}
+  .seclabel .t{font-size:52px;font-weight:800;color:var(--ink);margin-top:14px;letter-spacing:-.025em}
+  .cap{position:absolute;left:50%;bottom:92px;transform:translateX(-50%);background:rgba(14,38,64,.92);
+       color:#fff;font-size:34px;font-weight:700;padding:18px 44px;border-radius:12px;white-space:nowrap;letter-spacing:-.01em}
 
-  .cap{position:absolute;left:50%;bottom:92px;transform:translateX(-50%);
-       background:rgba(14,38,64,.92);color:#fff;font-size:34px;font-weight:700;
-       padding:18px 44px;border-radius:12px;white-space:nowrap;letter-spacing:-.01em}
-
-  /* ---------- A ---------- */
+  /* A : 새로운 공법을 찾는 이유 */
   #sA .alab{position:absolute;left:120px;top:210px;font-size:22px;font-weight:600;letter-spacing:.06em;color:var(--muted)}
   #sA .ln{position:absolute;left:120px;font-size:72px;font-weight:800;color:var(--ink);letter-spacing:-.03em;display:flex;align-items:center;gap:26px}
   #sA .ln b{display:block;width:6px;height:58px;background:var(--blue);border-radius:3px}
-  #sA #a1{top:300px} #sA #a2{top:410px} #sA #a3{top:520px}
+  #a1{top:300px}#a2{top:410px}#a3{top:520px}
 
-  #sHook .h1{position:absolute;left:0;right:0;top:400px;text-align:center;font-size:58px;font-weight:600;color:#9ec4ea;letter-spacing:-.02em}
-  #sHook .h2{position:absolute;left:0;right:0;top:488px;text-align:center;font-size:78px;font-weight:800;color:#fff;letter-spacing:-.035em}
-  #sHook .hline{position:absolute;left:50%;top:630px;width:120px;height:4px;margin-left:-60px;background:var(--sky);transform-origin:center}
+  /* P : PROCESS 기술이 현장에 닿기까지 */
+  #sP .pline{position:absolute;left:120px;top:300px;width:1680px;height:2px;background:#cfdcea}
+  #sP .pdot{position:absolute;top:294px;width:14px;height:14px;border-radius:50%;background:var(--blue)}
+  #sP .psteps{position:absolute;left:120px;top:330px;display:flex;gap:24px}
+  #sP .ps{width:402px;height:330px;background:#fff;border:1px solid #dde6f2;border-radius:12px;
+          box-shadow:0 14px 34px rgba(16,35,60,.08);position:relative;padding:30px}
+  #sP .ps .i{font-size:19px;font-weight:800;color:var(--blue);letter-spacing:.2em}
+  #sP .ps .n{position:absolute;left:30px;bottom:30px;font-size:38px;font-weight:800;color:var(--ink);letter-spacing:-.02em}
+  #sP .pwith{position:absolute;right:120px;top:166px;font-size:30px;font-weight:800;color:var(--blue);letter-spacing:-.01em}
 
-  /* ---------- B ---------- */
-  #sB .num{position:absolute;left:0;right:0;top:330px;text-align:center;font-size:170px;font-weight:800;color:#fff;letter-spacing:-.045em;line-height:1}
-  #sB .nunit{position:absolute;left:0;right:0;top:530px;text-align:center;font-size:34px;font-weight:600;color:var(--sky);letter-spacing:.24em}
-  #sB .chips{position:absolute;left:0;right:0;top:352px;display:flex;justify-content:center;gap:40px}
-  #sB .chip{min-width:420px;padding:34px 40px;border:1px solid rgba(127,179,232,.35);border-radius:14px;background:rgba(255,255,255,.05);text-align:center}
-  #sB .chip .v{font-size:62px;font-weight:800;color:#fff;letter-spacing:-.03em}
-  #sB .chip .l{font-size:23px;font-weight:600;color:var(--sky);margin-top:10px;letter-spacing:.06em}
-  #sB .badge{position:absolute;left:50%;top:572px;transform:translateX(-50%);
-    background:linear-gradient(135deg,var(--blue) 0%,var(--blue2) 100%);color:#fff;
-    font-size:40px;font-weight:800;padding:26px 62px;border-radius:14px;letter-spacing:-.01em;
-    box-shadow:0 18px 50px rgba(47,111,208,.35)}
+  /* R : 경험과 데이터 → 현장 분석 → 적용 방향 */
+  #sR .big{position:absolute;left:0;right:0;top:360px;text-align:center;font-size:178px;font-weight:800;color:#fff;letter-spacing:-.05em;line-height:1}
+  #sR .bigu{position:absolute;left:0;right:0;top:566px;text-align:center;font-size:36px;font-weight:600;color:var(--sky);letter-spacing:.26em}
+  #sR .stat{position:absolute;left:120px;top:190px}
+  #sR .stat .k{font-size:21px;font-weight:700;letter-spacing:.22em;color:var(--blue)}
+  #sR .stat .v{margin-top:12px;font-size:76px;font-weight:800;color:var(--ink);letter-spacing:-.04em}
+  #sR .stat .v em{font-style:normal;font-size:38px;font-weight:700;margin-left:10px}
+  #sR .stat .s{margin-top:12px;font-size:28px;font-weight:600;color:var(--muted)}
+  #sR .dgwrap{position:absolute;left:120px;top:470px}
+  #sR .dgwrap .k{font-size:21px;font-weight:700;letter-spacing:.22em;color:var(--blue)}
+  #sR .dgl{margin-top:24px;display:flex;flex-direction:column;gap:20px}
+  #sR .dg{font-size:38px;font-weight:700;color:var(--ink);letter-spacing:-.02em}
+  #sR .dg:before{content:'◦ ';color:var(--blue)}
+  #sR .bars{position:absolute;left:50%;top:330px;transform:translateX(-50%);width:900px}
+  #sR .bar{height:92px;border-radius:10px;background:#fff;border:1px solid #dde6f2;box-shadow:0 10px 26px rgba(16,35,60,.07);
+           display:flex;align-items:center;justify-content:center;font-size:38px;font-weight:700;color:var(--ink);letter-spacing:-.02em;
+           border-left:7px solid var(--blue)}
+  #sR .bar.on{background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;border-left-color:transparent;box-shadow:0 18px 44px rgba(47,111,208,.32)}
+  #sR .arw{text-align:center;font-size:26px;color:#9ab2cc;margin:14px 0}
 
-  /* ---------- C ---------- */
+  /* C : 5가지 서비스 포토 시퀀스 */
+  #sC .seclabel{top:112px}
+  #sC .seclabel .k{font-size:19px}
+  #sC .seclabel .t{font-size:40px;margin-top:10px}
   #sC .card{position:absolute;left:400px;top:215px;width:1120px;height:630px;border-radius:16px;overflow:hidden;
             background:#0d2340;box-shadow:0 30px 70px rgba(16,35,60,.22)}
   #sC .card img{width:100%;height:100%;object-fit:cover;display:block}
-  #sC .card .scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,24,43,.88) 0%,rgba(7,24,43,.35) 26%,rgba(7,24,43,0) 52%)}
-  #sC .card .no{position:absolute;right:34px;top:28px;font-size:22px;font-weight:800;letter-spacing:.3em;color:rgba(255,255,255,.75)}
-  #sC .card .nm{position:absolute;left:46px;bottom:46px;font-size:50px;font-weight:800;color:#fff;letter-spacing:-.025em}
-  #sC .card .bn{position:absolute;left:44px;bottom:44px;font-size:30px;font-weight:600;color:#bcd8f4;letter-spacing:-.01em}
-  #sC .card.ph{display:flex;align-items:center;justify-content:center;
-     background:repeating-linear-gradient(135deg,#102e50 0 22px,#0d2846 22px 44px)}
-  #sC .card.ph .phin{text-align:center;border:2px dashed rgba(146,188,232,.55);border-radius:14px;padding:40px 64px}
-  #sC .card.ph .phin .ic{font-size:60px;line-height:1}
-  #sC .card.ph .phin .tx{margin-top:16px;font-size:28px;font-weight:700;color:#a9cdee;letter-spacing:.04em}
-  #sC .card.ph .phin .sb{margin-top:8px;font-size:20px;font-weight:500;color:#6f9cc6;letter-spacing:.14em}
+  #sC .card .scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,24,43,.9) 0%,rgba(7,24,43,.4) 27%,rgba(7,24,43,0) 54%)}
+  #sC .card .no{position:absolute;right:34px;top:28px;font-size:21px;font-weight:800;letter-spacing:.3em;color:rgba(255,255,255,.75)}
+  #sC .card .nm{position:absolute;left:46px;bottom:44px;font-size:48px;font-weight:800;color:#fff;letter-spacing:-.025em;line-height:1.2}
+  #sC .card .body{position:absolute;left:0;right:0;top:48%;transform:translateY(-50%);padding:0 70px}
+  #sC .card.doc .scrim{background:linear-gradient(to top,rgba(7,24,43,.7) 0%,rgba(7,24,43,0) 18%)}
+  #sC .card .rowl{display:flex;flex-direction:column;gap:15px}
+  #sC .card .ri{display:flex;align-items:center;gap:20px;background:rgba(255,255,255,.07);border:1px solid rgba(127,179,232,.22);
+                border-radius:10px;padding:15px 26px}
+  #sC .card .ri b{font-size:17px;font-weight:800;color:var(--sky);letter-spacing:.2em;min-width:40px}
+  #sC .card .ri span{font-size:31px;font-weight:700;color:#fff;letter-spacing:-.02em}
+  #sC .card .ph3{display:flex;gap:18px;align-items:stretch}
+  #sC .card .pc{flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(127,179,232,.22);border-radius:10px;padding:38px 26px}
+  #sC .card .pc .h{font-size:19px;font-weight:800;color:var(--sky);letter-spacing:.12em}
+  #sC .card .pc .d{margin-top:22px;font-size:28px;font-weight:700;color:#fff;line-height:1.35;letter-spacing:-.02em}
+  #sC .card .pcar{display:flex;align-items:center;font-size:26px;color:var(--sky)}
   #sC .dots{position:absolute;left:50%;top:884px;transform:translateX(-50%);display:flex;gap:12px}
   #sC .dots i{display:block;width:46px;height:4px;border-radius:2px;background:#c3d4e6}
-  #sC .wrap{position:absolute;left:0;right:0;top:330px;text-align:center}
-  #sC .wrap .big{font-size:66px;font-weight:800;color:var(--ink);letter-spacing:-.035em}
-  #sC .wrapthumbs{position:absolute;left:50%;top:470px;transform:translateX(-50%);display:flex;gap:16px}
-  #sC .wrapthumbs i{display:block;width:150px;height:84px;border-radius:8px;background:#20446e}
 
-  /* ---------- D ---------- */
-  #sD .steps{position:absolute;left:150px;top:300px;display:flex;gap:26px}
-  #sD .st{width:380px;height:250px;background:#fff;border-radius:14px;border:1px solid #dbe5f1;
-          box-shadow:0 14px 34px rgba(16,35,60,.08);padding:34px 32px;position:relative}
-  #sD .st .i{font-size:19px;font-weight:800;color:var(--blue);letter-spacing:.2em}
-  #sD .st .n{position:absolute;left:32px;bottom:34px;font-size:40px;font-weight:800;color:var(--ink);letter-spacing:-.02em}
-  #sD .diag{position:absolute;left:150px;top:600px;display:flex;gap:18px}
-  #sD .dg{padding:18px 30px;border-radius:999px;background:rgba(47,111,208,.08);border:1px solid rgba(47,111,208,.28);
-          font-size:28px;font-weight:700;color:#275d9f}
-  #sD .res{position:absolute;left:150px;top:720px;width:1620px;padding:32px 0;text-align:center;border-radius:14px;
-           background:linear-gradient(135deg,var(--blue) 0%,var(--blue2) 100%);color:#fff;font-size:46px;font-weight:800;
-           letter-spacing:-.02em;box-shadow:0 20px 46px rgba(47,111,208,.3)}
+  /* S : 60명 / POUR 통합 지원 체계 */
+  #sS .n60{position:absolute;left:0;right:0;top:300px;text-align:center;font-size:190px;font-weight:800;color:var(--ink);letter-spacing:-.05em;line-height:1}
+  #sS .n60l{position:absolute;left:0;right:0;top:530px;text-align:center;font-size:44px;font-weight:800;color:var(--blue);letter-spacing:-.02em}
+  #sS .n60s{position:absolute;left:0;right:0;top:600px;text-align:center;font-size:30px;font-weight:600;color:var(--muted)}
+  #sS .badge{position:absolute;left:50%;top:690px;transform:translateX(-50%);background:linear-gradient(135deg,var(--blue),var(--blue2));
+     color:#fff;font-size:40px;font-weight:800;padding:26px 62px;border-radius:14px;box-shadow:0 18px 50px rgba(47,111,208,.35)}
 
-  /* ---------- E ---------- */
+  /* E : 협력 프로세스 */
   #sE .etit{position:absolute;left:0;right:0;top:230px;text-align:center}
   #sE .etit .k{font-size:21px;font-weight:700;letter-spacing:.34em;color:var(--blue)}
   #sE .etit .t{margin-top:14px;font-size:58px;font-weight:800;color:var(--ink);letter-spacing:-.03em}
   #sE .track{position:absolute;left:230px;top:440px;width:1460px;height:4px;background:#d7e2ef;border-radius:2px}
   #sE .fill{position:absolute;left:0;top:0;height:100%;width:0;background:var(--blue);border-radius:2px}
   #sE .nodes{position:absolute;left:230px;top:398px;width:1460px;display:flex;justify-content:space-between}
-  #sE .nd{width:88px;height:88px;border-radius:50%;background:#fff;border:3px solid #d7e2ef;
-          display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:800;color:#9fb3c9}
+  #sE .nd{width:88px;height:88px;border-radius:50%;background:#fff;border:3px solid #d7e2ef;display:flex;align-items:center;
+          justify-content:center;font-size:30px;font-weight:800;color:#9fb3c9}
   #sE .lbs{position:absolute;left:230px;top:520px;width:1460px;display:flex;justify-content:space-between}
-  #sE .lb{width:300px;text-align:center;font-size:33px;font-weight:700;color:var(--ink);letter-spacing:-.02em}
-  #sE .lb:first-child{text-align:left} #sE .lb:last-child{text-align:right}
-  #sE .mou{position:absolute;left:50%;top:640px;transform:translateX(-50%);
-     background:linear-gradient(135deg,var(--blue) 0%,var(--blue2) 100%);color:#fff;text-align:center;
-     padding:30px 70px;border-radius:14px;box-shadow:0 20px 50px rgba(47,111,208,.34)}
+  #sE .lb{width:320px;text-align:center;font-size:33px;font-weight:700;color:var(--ink);letter-spacing:-.02em}
+  #sE .lb:first-child{text-align:left}#sE .lb:last-child{text-align:right}
+  #sE .mou{position:absolute;left:50%;top:640px;transform:translateX(-50%);background:linear-gradient(135deg,var(--blue),var(--blue2));
+     color:#fff;text-align:center;padding:30px 70px;border-radius:14px;box-shadow:0 20px 50px rgba(47,111,208,.34)}
   #sE .mou .k{font-size:18px;font-weight:700;letter-spacing:.32em;opacity:.8}
   #sE .mou .t{margin-top:10px;font-size:44px;font-weight:800;letter-spacing:-.02em}
 
-  /* ---------- F ---------- */
+  /* F : 현장에서 이기는 것 */
+  #sF .wk{position:absolute;left:0;right:0;top:400px;text-align:center;font-size:40px;font-weight:600;color:#9ec4ea;letter-spacing:-.01em}
+  #sF .wt{position:absolute;left:0;right:0;top:470px;text-align:center;font-size:92px;font-weight:800;color:#fff;letter-spacing:-.04em}
   #sF .flow{position:absolute;left:0;right:0;top:300px;display:flex;justify-content:center;align-items:center;gap:52px}
   #sF .fw{font-size:62px;font-weight:800;color:#fff;letter-spacing:-.03em}
-  #sF .ar{font-size:36px;color:var(--sky);font-weight:400}
+  #sF .ar{font-size:36px;color:var(--sky)}
   #sF svg{position:absolute;left:460px;top:566px}
-  #sF .pill{position:absolute;left:50%;transform:translateX(-50%);padding:20px 54px;border-radius:12px;
-            font-size:40px;font-weight:800;letter-spacing:-.02em}
-  #sF #p1{top:430px;background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.22)}
-  #sF #p2{top:528px;background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;box-shadow:0 16px 44px rgba(47,111,208,.4)}
-  #sF .punch{position:absolute;left:0;right:0;top:450px;text-align:center;font-size:82px;font-weight:800;color:#fff;letter-spacing:-.04em}
-  #sF .punch em{font-style:normal;color:var(--sky)}
+  #sF .pill{position:absolute;left:50%;transform:translateX(-50%);padding:20px 54px;border-radius:12px;font-size:40px;font-weight:800;letter-spacing:-.02em}
+  #p1{top:430px;background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.22)}
+  #p2{top:528px;background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;box-shadow:0 16px 44px rgba(47,111,208,.4)}
 
-  /* ---------- G ---------- */
-  #sG .logo{position:absolute;left:0;right:0;top:330px;text-align:center;font-size:120px;font-weight:800;color:#fff;letter-spacing:.3em;text-indent:.3em}
-  #sG .ul{position:absolute;left:50%;top:486px;width:160px;height:3px;margin-left:-80px;background:var(--sky);transform-origin:center}
-  #sG .k{position:absolute;left:0;right:0;top:540px;text-align:center;font-size:28px;font-weight:600;color:#9ec4ea;letter-spacing:.06em}
-  #sG .c{position:absolute;left:0;right:0;top:598px;text-align:center;font-size:52px;font-weight:800;color:#fff;line-height:1.42;letter-spacing:-.03em}
-  #sG .info{position:absolute;left:0;right:0;top:830px;text-align:center;color:#b7cde4}
+  /* G : 엔딩 */
+  #sG .logo{position:absolute;left:0;right:0;top:300px;text-align:center;font-size:120px;font-weight:800;color:#fff;letter-spacing:.3em;text-indent:.3em}
+  #sG .ul{position:absolute;left:50%;top:456px;width:160px;height:3px;margin-left:-80px;background:var(--sky);transform-origin:center}
+  #sG .k{position:absolute;left:0;right:0;top:512px;text-align:center;font-size:28px;font-weight:600;color:#9ec4ea;letter-spacing:.06em}
+  #sG .c{position:absolute;left:0;right:0;top:568px;text-align:center;font-size:52px;font-weight:800;color:#fff;line-height:1.42;letter-spacing:-.03em}
+  #sG .info{position:absolute;left:0;right:0;top:800px;text-align:center;color:#b7cde4}
   #sG .info .co{font-size:26px;font-weight:700}
-  #sG .info .tel{margin-top:10px;font-size:38px;font-weight:800;color:#fff;letter-spacing:.02em}
+  #sG .info .tel{margin-top:10px;font-size:38px;font-weight:800;color:#fff}
   #sG .info .ad{margin-top:10px;font-size:21px;font-weight:500;opacity:.8}
   #fadeout{position:absolute;inset:0;background:#000;opacity:0}
-  #sC .seclabel{top:112px}
-  #sC .seclabel .k{font-size:19px}
-  #sC .seclabel .t{font-size:40px;margin-top:10px}
 </style>
 </head>
 <body>
 <div id="stage">
-  <div class="bg light"></div>
-  <div class="bg navy" id="bgNavy"></div>
+  <div class="bg light"></div><div class="bg navy" id="bgNavy"></div>
   <div class="brand" id="brand">POUR<i></i></div>
 
   <section id="sA">
@@ -143,53 +142,61 @@
     <div class="ln" id="a3"><b></b>시장 경쟁력</div>
   </section>
 
-  <section id="sHook">
-    <div class="h1" id="hk1">공법은 많습니다.</div>
-    <div class="h2" id="hk2">끝까지 함께 가는 곳은 많지 않습니다.</div>
-    <div class="hline" id="hkl"></div>
+  <section id="sP">
+    <div class="seclabel" id="pLab"><div class="k">PROCESS</div><div class="t">기술이 현장에 닿기까지</div></div>
+    <div class="pwith" id="pWith">POUR가 함께하는 과정</div>
+    <div class="pline" id="pLine"></div>
+    <div class="psteps" id="pSteps">
+      <div class="ps"><div class="i">01</div><div class="n">기술 검토</div></div>
+      <div class="ps"><div class="i">02</div><div class="n">자료 준비</div></div>
+      <div class="ps"><div class="i">03</div><div class="n">적용 방안</div></div>
+      <div class="ps"><div class="i">04</div><div class="n">실제 시공</div></div>
+    </div>
   </section>
 
-  <section id="sB">
-    <div class="num" id="bNum">0</div>
-    <div class="nunit" id="bUnit">세 대</div>
-    <div class="chips" id="bChips">
-      <div class="chip"><div class="v">2,600,000</div><div class="l">세대 현장 데이터</div></div>
-      <div class="chip"><div class="v">60</div><div class="l">명 전문 인력</div></div>
+  <section id="sR">
+    <div class="big" id="rBig">0</div>
+    <div class="bigu" id="rBigU">세 대</div>
+    <div class="stat" id="rStat">
+      <div class="k">경험과 데이터</div>
+      <div class="v">2,600,000<em>세대</em></div>
+      <div class="s">전국 아파트 현장</div>
     </div>
-    <div class="badge" id="bBadge">POUR 통합 지원 체계</div>
+    <div class="dgwrap" id="rDiag">
+      <div class="k">현장 진단</div>
+      <div class="dgl"><div class="dg">외벽 상태</div><div class="dg">적용 환경</div><div class="dg">공정 조건</div><div class="dg">현장 요구사항</div></div>
+    </div>
+    <div class="bars" id="rBars">
+      <div class="bar" id="rb1">경험 · 데이터</div><div class="arw">↓</div>
+      <div class="bar" id="rb2">현장 분석</div><div class="arw">↓</div>
+      <div class="bar on" id="rb3">적합한 적용 방향</div>
+    </div>
   </section>
 
   <section id="sC">
-    <div class="seclabel" id="cLab"><div class="k">POUR SUPPORT</div><div class="t">시공사가 받는 다섯 가지</div></div>
+    <div class="seclabel" id="cLab"><div class="k">POUR SUPPORT</div><div class="t">POUR의 지원</div></div>
     <div id="cCards"></div>
     <div class="dots" id="cDots"><i></i><i></i><i></i><i></i><i></i></div>
-    <div class="wrap" id="cWrap"><div class="big">다섯 가지가 하나로 움직입니다.</div></div>
-    <div class="wrapthumbs" id="cThumbs"><i></i><i></i><i></i><i></i><i></i></div>
   </section>
 
-  <section id="sD">
-    <div class="seclabel" id="dLab"><div class="k">ON SITE</div><div class="t">기술이 현장에 닿기까지</div></div>
-    <div class="steps" id="dSteps">
-      <div class="st"><div class="i">01</div><div class="n">기술 검토</div></div>
-      <div class="st"><div class="i">02</div><div class="n">자료 준비</div></div>
-      <div class="st"><div class="i">03</div><div class="n">적용 방안</div></div>
-      <div class="st"><div class="i">04</div><div class="n">실제 시공</div></div>
-    </div>
-    <div class="diag" id="dDiag">
-      <div class="dg">외벽 상태</div><div class="dg">적용 환경</div><div class="dg">공정 조건</div><div class="dg">현장 요구사항</div>
-    </div>
-    <div class="res" id="dRes">현장마다 다른 답을 찾아드립니다.</div>
+  <section id="sS">
+    <div class="n60" id="sNum">0</div>
+    <div class="n60l" id="sNumL">60명 전문 인력</div>
+    <div class="n60s" id="sNumS">하나의 현장을 중심으로 함께 움직입니다.</div>
+    <div class="badge" id="sBadge">POUR 통합 지원 체계</div>
   </section>
 
   <section id="sE">
-    <div class="etit" id="eTit"><div class="k">COOPERATION PROCESS</div><div class="t">협력은 간단합니다</div></div>
+    <div class="etit" id="eTit"><div class="k">COOPERATION PROCESS</div><div class="t">협력 프로세스</div></div>
     <div class="track" id="eTrack"><div class="fill" id="eFill"></div></div>
     <div class="nodes" id="eNodes"><div class="nd">01</div><div class="nd">02</div><div class="nd">03</div></div>
     <div class="lbs" id="eLbs"><div class="lb">POUR 본사 미팅</div><div class="lb">시공사 방문 미팅</div><div class="lb">MOU 체결</div></div>
-    <div class="mou" id="eMou"><div class="k">AGREEMENT</div><div class="t">POUR 공법 특허 사용 MOU 체결</div></div>
+    <div class="mou" id="eMou"><div class="k">AGREEMENT</div><div class="t">POUR공법 특허 사용 MOU 체결</div></div>
   </section>
 
   <section id="sF">
+    <div class="wk" id="fWk">좋은 공법의 기준은 결국</div>
+    <div class="wt" id="fWt">현장에서 이기는 것</div>
     <div class="flow" id="fFlow">
       <div class="fw" id="f1">선택</div><div class="ar" id="fa1">→</div>
       <div class="fw" id="f2">적용</div><div class="ar" id="fa2">→</div>
@@ -197,13 +204,11 @@
       <div class="fw" id="f4">실적</div>
     </div>
     <svg id="fSvg" width="1000" height="360" viewBox="0 0 1000 360">
-      <polyline id="fLine" points="0,322 210,284 420,236 630,158 840,72 985,24"
-        fill="none" stroke="#7fb3e8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-      <circle id="fDot" cx="985" cy="24" r="12" fill="#ffffff"/>
+      <polyline id="fLine" points="0,322 210,284 420,236 630,158 840,72 985,24" fill="none" stroke="#7fb3e8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle id="fDot" cx="985" cy="24" r="12" fill="#fff"/>
     </svg>
     <div class="pill" id="p1">더 많이 수주</div>
     <div class="pill" id="p2">더 많은 실적</div>
-    <div class="punch" id="fPunch">공법사를 바꾸면, <em>영업이 달라집니다.</em></div>
   </section>
 
   <section id="sG">
@@ -222,7 +227,6 @@
   <div class="rule"></div>
   <div id="fadeout"></div>
 </div>
-
 <script src="timeline.js"></script>
 </body>
 </html>
